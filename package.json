@@ -1,0 +1,21 @@
+{
+  "name": "2021_ddd",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "private": "true",
+  "workspaces": [
+    "subprojects/*"
+  ],
+  "scripts": {
+    "start": "nodemon -w ./subprojects -x 'ts-node ./bin/www.ts'"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^4.18.0",
+    "@typescript-eslint/parser": "^4.18.0",
+    "eslint": "^7.22.0"
+  }
+}

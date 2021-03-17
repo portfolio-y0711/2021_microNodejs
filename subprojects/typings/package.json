@@ -2,5 +2,10 @@
   "name": "@clean/typings",
   "version": "1.0.0",
   "main": "index.js",
-  "license": "MIT"
+  "license": "MIT",
+  "scripts": {
+    "clean": "tsc -b --clean",
+    "build": "tsc -b",
+    "lint": "yarn eslint src --ext ts,js,tsx,jsx"
+  }
 }

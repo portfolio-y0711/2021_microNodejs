@@ -11,7 +11,7 @@
     "subprojects/*"
   ],
   "scripts": {
-    "start": "nodemon -w ./subprojects -x 'ts-node ./bin/www.ts'"
+    "dev": "nodemon -w subprojects/api/src -x 'tsc -b --clean subprojects && tsc -b subprojects && node ./bin/www'"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^4.18.0",

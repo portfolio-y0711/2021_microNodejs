@@ -1,5 +1,5 @@
 import { Controller, Route, Get, Tags, Example, Path } from 'tsoa';
-import { pathService } from '../../../services';
+import { pathService } from '../../../service';
 
 @Route('path')
 @Tags('Path Controller')

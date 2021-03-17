@@ -7,7 +7,7 @@
     "clean": "tsc -b --clean && rimraf ./swagger.json",
     "build": "tsc -b",
     "lint": "yarn eslint src --ext ts",
-    "dev": "nodemon -w api -e ts -x 'yarn clean && yarn tsoa && yarn build && node ../../bin/www'",
+    "dev": "nodemon -w src/service -e ts -x 'yarn clean && yarn tsoa && yarn build && node ../../bin/www'",
     "tsoa": "tsoa routes && tsoa swagger",
     "test": "jest --runInBand --watch"
   },
@@ -18,7 +18,8 @@
     "express": "^4.17.1",
     "jest": "^26.6.3",
     "reflect-metadata": "^0.1.13",
-    "ts-jest": "^26.5.3"
+    "ts-jest": "^26.5.3",
+    "typeorm-seeding": "^1.6.1"
   },
   "devDependencies": {
     "@babel/plugin-proposal-decorators": "^7.13.5",

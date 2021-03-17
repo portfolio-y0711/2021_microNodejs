@@ -1,9 +1,9 @@
-import { conn } from '../src/server/repository/conn'
+import { conn } from '../src/repo/typeorm/conn'
 import { Connection } from 'typeorm';
-import { Path } from '../src/server/repository/models/path.entity'
+import { Path } from '../src/repo/typeorm/models/path.entity'
 
 describe('Typeorm path entity', () => {
-    it('', async() => {
+    it('insert', async() => {
         const db: Connection = await conn.getConnection()
         await db.getRepository(Path).insert({
             type: 'DIRECTORY',
@@ -11,11 +11,11 @@ describe('Typeorm path entity', () => {
             filepath: '',
             parent: 0
         })
-        const dir = await db.getRepository(Path) .find({
+        const dirs = await db.getRepository(Path).find({
             where: {
                 title: 'monorepo'
             }
         })
-        expect(dir[0].type).toBe('DIRECTORY')
+        expect(dirs[0].type).toBe('DIRECTORY')
     })
 })

@@ -5,10 +5,10 @@
   "types": "dist/index.d.ts",
   "license": "MIT",
   "scripts": {
-    "clean": "tsc -b --clean",
+    "clean": "tsc -b --clean && rimraf ./swagger.json",
     "build": "tsc -b",
     "lint": "yarn eslint src --ext ts,js,tsx,jsx",
-    "dev": "node ../../bin/www",
+    "dev": "nodemon -w api -e ts -x 'yarn clean && yarn tsoa && yarn build && node ../../bin/www'",
     "tsoa": "tsoa routes && tsoa swagger"
   },
   "dependencies": {
@@ -21,6 +21,7 @@
     "@babel/preset-typescript": "^7.13.0",
     "@types/cors": "^2.8.10",
     "@types/express": "^4.17.11",
+    "rimraf": "^3.0.2",
     "tsoa": "^2.4.11",
     "typescript": "^4.2.3"
   }

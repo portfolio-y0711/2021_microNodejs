@@ -14,7 +14,12 @@ interface IFile {
     parent: number
 }
 
+interface IPathDB {
+    getPath: (id: string) => Promise<unknown>
+}
+
 export {
     IDirectory,
-    IFile
+    IFile,
+    IPathDB
 }

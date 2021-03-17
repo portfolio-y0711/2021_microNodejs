@@ -1,0 +1,13 @@
+{
+  "swagger": {
+      "basePath": "/v1/api",
+      "entryFile": "./src/server/adaptors/controllers/index.ts",
+      "outputDirectory": "./",
+      "host": "localhost:5000"
+  },
+  "routes": {
+      "basePath": "/v1/api",
+      "entryFile": "./src/server/adaptors/controllers/index.ts",
+      "routesDir": "./src/server/adaptors/routers"
+  }
+}

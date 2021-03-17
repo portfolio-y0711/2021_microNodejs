@@ -1,0 +1,8 @@
+{
+  "packages": [
+    "subprojects/*"
+  ],
+  "npmClient": "yarn",
+  "version": "independent",
+  "useWorkspaces": true
+}

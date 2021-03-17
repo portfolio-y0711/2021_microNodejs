@@ -1,10 +1,16 @@
 {
-  "extends": "../../tsconfig.settings.json",
   "compilerOptions": {
     "experimentalDecorators": true,
-    "composite": true,
-    "outDir": "dist",
-    "rootDir": "src"
+    "emitDecoratorMetadata": true,
+    "target": "es5",
+    "module": "commonjs",
+    "outDir": "./dist",
+    "rootDir": "./",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "strictPropertyInitialization": false
   },
-  "include": ["src"]
+  "exclude": ["node_modules/*"]
 }

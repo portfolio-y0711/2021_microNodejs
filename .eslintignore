@@ -1,2 +1,3 @@
 subprojects/*/tests/*.ts
-subprojects/api/server/adaptors/swagger-ui/*.*
+subprojects/api/src/server/adaptors/swagger-ui/*.*
+**/**/*.js

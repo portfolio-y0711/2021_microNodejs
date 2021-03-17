@@ -1,5 +1,7 @@
 {
     "compilerOptions": {
+      "experimentalDecorators": true,
+      "emitDecoratorMetadata": true,
       "module": "CommonJS",
       "composite": true,
       "target": "ES2018",
@@ -7,7 +9,10 @@
       "noUnusedLocals": true,
       "noUnusedParameters": true,
       "noImplicitReturns": true,
-      "declaration": true
+      "declaration": true,
+      "esModuleInterop": true,
+      "skipLibCheck": true,
+      "forceConsistentCasingInFileNames": true
     },
-    "exclude": ["**/node_modules/**"]
+    "exclude": ["**/node_modules/**", "bak"]
   }

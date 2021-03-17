@@ -3,7 +3,7 @@ import * as fs from 'fs'
 
 const pathService = (() => {
     const getPath = async(id: string) => {
-        const data = fs.readFileSync(path.join(__dirname, '../../src/server/data/files.json'), 'utf-8')
+        const data = fs.readFileSync(path.join(__dirname, '../../../src/server/data/files.json'), 'utf-8')
         let queryString = ''
 
         switch(id) {

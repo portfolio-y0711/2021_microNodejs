@@ -9,7 +9,8 @@
     "lint": "yarn eslint src --ext ts",
     "dev": "nodemon -w src/service -e ts -x 'yarn clean && yarn tsoa && yarn build && node ../../bin/www'",
     "tsoa": "tsoa routes && tsoa swagger",
-    "test": "jest --runInBand --watch"
+    "test": "rimraf dist && tsc && jest -c jest.config.js",
+    "dev:test": "jest -c jest.dev.config.js --runInBand --watch"
   },
   "dependencies": {
     "@clean/typings": "^1.0.0",

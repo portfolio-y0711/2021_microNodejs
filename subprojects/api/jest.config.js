@@ -1,11 +1,8 @@
-/* eslint-disable max-len */
 module.exports = {
-  clearMocks: true,  
-  maxWorkers: 1,
-  preset: 'ts-jest',
+  verbose: true,
+  rootDir: '.',
+  testMatch: ['<rootDir>././dist/tests/*.test.js'],
+  moduleFileExtensions: ['ts', 'js', 'json'],
   testEnvironment: 'node',
-  testMatch: [
-    '**/tests/**/*.[jt]s?(x)',
-  //   "**/?(*.)+(spec|test).[tj]s?(x)"
-  ],
-};
+  clearMocks: true
+}

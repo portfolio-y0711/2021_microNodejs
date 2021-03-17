@@ -3,7 +3,7 @@ import { options, typeOrmConfigs } from './config'
 import { Path } from './models/path.entity';
 import path from 'path'
 import fs from 'fs'
-import { root } from '../../../config/paths';
+import { distroot, root } from '../../../config/paths';
 
 class SingleConnection {
     conn: any
@@ -30,7 +30,7 @@ class SingleConnection {
         return this.conn
     }
     async seed() {
-        const data = fs.readFileSync(path.join(root, './data/files.json'), 'utf-8')
+        const data = fs.readFileSync(path.join(distroot, './data/files.json'), 'utf-8')
         const obj = JSON.parse(data)
         const arr = Object.entries(obj).reduce((acc, [_, val]) => {
             return [ ...acc, ...(val as [])]

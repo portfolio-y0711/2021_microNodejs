@@ -6,10 +6,8 @@ import { distroot } from '../../../config/paths';
 
 // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
 const applyAdaptors = (app: express.Express) => {
-    // app.use('/swagger-ui', express.static(path.join(__dirname, '../../../../src/server/adaptors/swagger-ui')))
     app.use('/swagger-ui', express.static(path.join(distroot, './src/server/adaptors/swagger-ui')))
     app.use('/v1/swagger.json', (_: unknown, res: express.Response) => {
-        // const json = fs.readFileSync(path.join(__dirname, '../../../../swagger.json'), 'utf8')
         const json = fs.readFileSync(path.join(distroot, './swagger.json'), 'utf8')
         res.send(json)
     });

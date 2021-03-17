@@ -11,7 +11,7 @@ class PathDB {
         const db: Connection = await this.conn.getConnection()
         const result = await db.getRepository(Path).find({
             where: {
-                id: id
+                parent: id
             }
         })
         return result

@@ -19,7 +19,7 @@
             "type": "FILE",
             "title": "mono.png",
             "filepath": "./assets/mono.png",
-            "parent": 1
+            "parent": 0
         }
     ],
     "query1": [

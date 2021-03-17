@@ -1,6 +1,6 @@
 import * as path from 'path'
 import * as fs from 'fs'
-import { root, distroot } from '../../../config/paths';
+import { distroot } from '../../../config/paths';
 
 const fileDB = (() => {
     const getPath = async(id: string) => {

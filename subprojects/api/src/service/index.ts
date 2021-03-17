@@ -1,4 +1,5 @@
-import { fileDB } from "../repo/filedb"
+import { fileDB } from '../repo/filedb'
+import { pathDB } from '../repo/typeorm'
 
 const createPathService = (db: any) => {
     const getPath = async(id: string) => {
@@ -10,7 +11,7 @@ const createPathService = (db: any) => {
     }
 }
 
-const pathService = createPathService(fileDB)
+const pathService = createPathService(pathDB)
 
 export {
     pathService

@@ -23,6 +23,7 @@
     "jest": "^26.6.3",
     "mysql": "^2.18.1",
     "reflect-metadata": "^0.1.13",
+    "swagger-ui": "^2.2.10",
     "ts-jest": "^26.5.3",
     "typeorm-seeding": "^1.6.1"
   },

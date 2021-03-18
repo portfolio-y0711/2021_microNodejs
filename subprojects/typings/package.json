@@ -1,5 +1,5 @@
 {
-  "name": "@clean/typings",
+  "name": "@micro/typings",
   "version": "1.0.0",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -8,5 +8,8 @@
     "clean": "tsc -b --clean",
     "build": "tsc -b",
     "lint": "yarn eslint src --ext ts,js,tsx,jsx"
+  },
+  "dependencies": {
+    "typescript": "^4.2.3"
   }
 }

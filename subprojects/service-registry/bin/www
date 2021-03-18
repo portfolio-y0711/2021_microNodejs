@@ -1,0 +1,5 @@
+const app = require('../dist/src').default
+
+app.listen(5000, () => {
+    console.log(`server is listeneing on port 5000`)
+})

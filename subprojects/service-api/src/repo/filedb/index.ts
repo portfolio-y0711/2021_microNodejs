@@ -1,7 +1,7 @@
 import * as path from 'path'
 import * as fs from 'fs'
 import { distroot } from '../../../config/paths';
-import { IPathDB } from '@clean/typings'
+import { IPathDB } from '@micro/typings'
 
 const fileDB: IPathDB = (() => {
     const getPath = async(id: string) => {

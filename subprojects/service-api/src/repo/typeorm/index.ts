@@ -1,7 +1,7 @@
 import { Connection } from "typeorm"
 import { conn, Single } from "./conn"
 import { Path } from "./models/path.entity"
-import { IPathDB } from '@clean/typings';
+import { IPathDB } from '@micro/typings';
 
 class PathDB implements IPathDB{
     conn

@@ -1,6 +1,6 @@
 import { fileDB } from '../repo/filedb'
 import { pathDB } from '../repo/typeorm'
-import { IPathDB } from '@clean/typings';
+import { IPathDB } from '@micro/typings';
 
 // persistence service
 const createPathService = (db: IPathDB) => {

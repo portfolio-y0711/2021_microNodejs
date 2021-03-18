@@ -8,6 +8,7 @@ const createRegistryController = (registry: any) => {
         return 
     }
     const get = (req: any, res: any) => {
+        const { srvnm: service_name, srver: service_version, srvprt: service_port } = req.params
         return 
     }
     return {

@@ -1,4 +1,4 @@
-## Clean Architecture Nodejs Server Kata &nbsp; 
+## Code Kata 3 (Clean Architecture / Web Server) &nbsp; 
 
 _부제: onion architecture로 모듈라하게 개발하기_
 

@@ -3,8 +3,15 @@ import { pathDB } from '../repo/typeorm'
 
 const createPathService = (db: any) => {
     const getPath = async(id: string) => {
+        let result
+        try {
+            result = await db.getPath(id)
+        } catch(e) {
+            console.error('[!!!] production database is not running!, using cached filedb')
+            result = await fileDB.getPath(id)
+        }
         // eslint-disable-next-line @typescript-eslint/no-unsafe-return
-        return await db.getPath(id)
+        return result
     }
     return {
         getPath

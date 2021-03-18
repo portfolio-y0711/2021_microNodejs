@@ -1,5 +1,5 @@
 import "reflect-metadata"
-import { createConnection, Entity, getRepository, Connection, getConnectionManager } from 'typeorm';
+import { getConnectionManager, getConnection, Entity, getRepository, Connection } from 'typeorm';
 import { PrimaryGeneratedColumn, Column } from "typeorm";
 import { root } from '../config/paths';
 
@@ -13,7 +13,7 @@ export class MyEntity {
     name?: string;
 }
 
-test("store Joe and fetch it", async () => {
+beforeEach(async () => {
     const manager = getConnectionManager()
     const conn: Connection = manager.create({
         type: 'sqlite',
@@ -23,17 +23,17 @@ test("store Joe and fetch it", async () => {
         synchronize: true,
         dropSchema: true
     })
-    await conn.connect()
-    // const conn: Connection = await createConnection({
-    //     type: 'sqlite',
-    //     name: 'default',
-    //     database: `${root}/data/path.sqlite`,
-    //     entities: [ MyEntity ],
-    //     synchronize: true,
-    //     dropSchema: true
-    // });
+    return await conn.connect()
+});
+
+afterEach(() => {
+    const conn = getConnection();
+    return conn.close();
+});
+
+test("store Joe and fetch it", async () => {
     
-    await conn.getRepository(MyEntity).insert({
+    await getRepository(MyEntity).insert({
         name: "Joe"
     });
     const joe = await getRepository(MyEntity).find({
@@ -42,10 +42,9 @@ test("store Joe and fetch it", async () => {
         }
     });
     expect(joe[0].name).toBe("Joe");
-    await conn.close()
 });
 
-test.skip("store Another and fetch it", async () => {
+test("store Another and fetch it", async () => {
     await getRepository(MyEntity).insert({
         name: "Another"
     });
@@ -56,5 +55,3 @@ test.skip("store Another and fetch it", async () => {
     });
     expect(joe[0].name).toBe("Another");
 });
-
-

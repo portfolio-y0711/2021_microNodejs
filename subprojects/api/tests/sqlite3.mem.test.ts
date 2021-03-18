@@ -1,4 +1,3 @@
-import "reflect-metadata"
 import { createConnection, getConnection, Entity, getRepository } from "typeorm";
 import { PrimaryGeneratedColumn, Column } from "typeorm";
 

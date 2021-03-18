@@ -11,6 +11,7 @@ export class PathController extends Controller {
     public async getPath(
         @Path() id: string
     ): Promise<any> {
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-return
         return await pathService.getPath(id)
     } 
 }

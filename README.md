@@ -1,15 +1,10 @@
-## DDD Nodejs Server Kata &nbsp; 
+## Clean Architecture Nodejs Server Kata &nbsp; 
 
-_부제: Domain Driven Design으로 모듈라하게 개발하기_
-
-<br/>
-
-> 
-> 
-
-[완성된 페이지 보기](https://portfolio-y0711.github.io/2021_modularJs)
+_부제: onion architecture로 모듈라하게 개발하기_
 
 <br/>
+
+![clean_arch](./the-clean-architecture.jpg)
 
 목차 
 

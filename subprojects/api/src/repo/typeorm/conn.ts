@@ -1,16 +1,16 @@
 import { createConnection, Connection } from 'typeorm';
-import { options, typeOrmConfigs } from './config'
+import { NODE_ENV, typeOrmConfigs } from './config'
 import { Path } from './models/path.entity';
 import path from 'path'
 import fs from 'fs'
-import { distroot, root } from '../../../config/paths';
+import { distroot } from '../../../config/paths';
 
 class SingleConnection {
     conn: any
     createConnection: any
     self: SingleConnection
     config: any
-    constructor(createConnection: any, conn: undefined, config: any) {
+    constructor(createConnection: any, conn: undefined) {
         this.conn = conn
         this.createConnection = createConnection
         this.self = this
@@ -22,7 +22,7 @@ class SingleConnection {
     }
     async getConnection() {
         if (!this.conn )  {
-            this.conn = await this.createConnection(this.config || typeOrmConfigs.production)
+            this.conn = await this.createConnection(this.config || typeOrmConfigs[NODE_ENV])
             if (typeof(this.conn) === 'object' && this.conn.constructor.name === 'Connection') await this.self.seed()
             
         }
@@ -48,12 +48,12 @@ class SingleConnection {
     }
 }
 
-const createConn = (createConnection: any, config: any) => {
+const createConn = (createConnection: any) => {
     let conn: any
-    return new SingleConnection(createConnection, conn, config)
+    return new SingleConnection(createConnection, conn)
 }
 
-const conn = createConn(createConnection, typeOrmConfigs.test)
+const conn = createConn(createConnection)
 
 export {
     createConn,

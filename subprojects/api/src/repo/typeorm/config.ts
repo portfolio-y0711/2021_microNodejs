@@ -6,21 +6,13 @@ import path from 'path';
 
 dotenv.config({ path: path.join(distroot, './.docker/.env')})
 
-const options: ConnectionOptions = {
-    type: 'sqlite',
-    name: 'typeorm-test',
-    database: ':memory:',
-    entities: [
-        Path
-    ],
-    logging: false,
-    dropSchema: true,
-    synchronize: true
-}
+const NODE_ENV = (process.env.NODE_ENV === 'prod') 
+                    ? 'prod' : (process.env.NODE_ENV === 'test') 
+                        ? 'test' : 'dev'
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 const typeOrmConfigs: { [name: string]: ConnectionOptions } = {
-    production: {
+    prod: {
         type: 'mysql',
         name: 'default',
         username: process.env.MYSQL_USER,
@@ -35,7 +27,7 @@ const typeOrmConfigs: { [name: string]: ConnectionOptions } = {
         synchronize: true
 
     },
-    development: {
+    dev: {
         type: 'sqlite',
         name: 'default',
         database: `${root}/data/path.sqlite`,
@@ -61,5 +53,5 @@ const typeOrmConfigs: { [name: string]: ConnectionOptions } = {
 
 export {
     typeOrmConfigs,
-    options
+    NODE_ENV,
 }

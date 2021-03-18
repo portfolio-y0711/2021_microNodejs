@@ -7,7 +7,9 @@
     "clean": "tsc -b --clean && rimraf ./swagger.json",
     "build": "tsc -b",
     "lint": "yarn eslint src --ext ts",
-    "dev": "nodemon -w src/service -e ts -x 'yarn clean && yarn tsoa && yarn build && node ../../bin/www'",
+    "dev": "nodemon -w src/service -e ts -x 'yarn clean && yarn tsoa && yarn build && NODE_ENV=dev node ../../bin/www'",
+    "start": "NODE_ENV=prod pm2 start ../../bin/www --name api",
+    "stop": "pm2 delete api",
     "tsoa": "tsoa routes && tsoa swagger",
     "test": "rimraf dist && tsc && jest -c jest.config.js",
     "dev:test": "jest -c jest.dev.config.js --runInBand --watch"

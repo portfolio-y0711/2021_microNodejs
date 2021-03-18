@@ -13,3 +13,6 @@ services:
             - ./setup.sql:/docker-entrypoint-initdb.d/setup.sql
         ports:
             - ${MYSQL_PORT}:3306
+        command: ['mysqld', '--character-set-server=utf8mb4', '--collation-server=utf8mb4_unicode_ci']
+        container_name: clean_mysql
+

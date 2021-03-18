@@ -2,8 +2,6 @@ version: "3.5"
 services:
     mysql:
         image: mysql
-        ports:
-            - 3306:3306
         env_file:
             - .env
         environment:
@@ -13,3 +11,5 @@ services:
             MYSQL_DATABASE: ${MYSQL_DATABASE}
         volumes:
             - ./setup.sql:/docker-entrypoint-initdb.d/setup.sql
+        ports:
+            - ${MYSQL_PORT}:3306

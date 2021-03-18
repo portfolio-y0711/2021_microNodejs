@@ -1,6 +1,10 @@
 import { ConnectionOptions } from 'typeorm'
 import { Path } from './models/path.entity'
-import { root } from '../../../config/paths'
+import { distroot, root } from '../../../config/paths'
+import dotenv from 'dotenv'
+import path from 'path';
+
+dotenv.config({ path: path.join(distroot, './.docker/.env')})
 
 const options: ConnectionOptions = {
     type: 'sqlite',
@@ -19,7 +23,10 @@ const typeOrmConfigs: { [name: string]: ConnectionOptions } = {
     production: {
         type: 'mysql',
         name: 'default',
-        database: 'prod',
+        username: process.env.MYSQL_USER,
+        password: process.env.MYSQL_PASSWORD,
+        database: process.env.MYSQL_DATABASE,
+        port: Number(process.env.MYSQL_PORT),
         entities: [
             Path
         ],

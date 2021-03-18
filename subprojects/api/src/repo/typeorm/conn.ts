@@ -22,7 +22,7 @@ class SingleConnection {
     }
     async getConnection() {
         if (!this.conn )  {
-            this.conn = await this.createConnection(this.config || typeOrmConfigs.test)
+            this.conn = await this.createConnection(this.config || typeOrmConfigs.production)
             if (typeof(this.conn) === 'object' && this.conn.constructor.name === 'Connection') await this.self.seed()
             
         }

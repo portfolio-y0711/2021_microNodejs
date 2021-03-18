@@ -18,25 +18,7 @@ _부제: onion architecture로 모듈라하게 개발하기_
 
         * 1단계: 시간 제약 없이 기능 개발하기 
 
-            📌 &nbsp; 어댑터 + 플러그인 방식: 
-
-            [`• 브랜치로 바로가기 >>> step01_01`](https://github.com/portfolio-y0711/2021_modularJs/tree/step01_01)
-
-            📌 &nbsp; 모듈 임포트 + 의존성 주입 방식: 
-            
-            [`• 브랜치로 바로가기 >>> step01_02`](https://github.com/portfolio-y0711/2021_modularJs/tree/step01_02)
-
-            <!-- [`• 브랜치로 바로가기 >>> step01_03`](https://github.com/portfolio-y0711/2021_modularJs/tree/step01_03) -->
-
-            <!-- [`• 브랜치로 바로가기 >>> step01_04`](https://github.com/portfolio-y0711/2021_modularJs/tree/step01_04) -->
-
-            <!-- [`• 브랜치로 바로가기 >>> step01_05`](https://github.com/portfolio-y0711/2021_modularJs/tree/step01_05) -->
-        
         * 2단계: 시간 제약 하에서 개발하기 
-
-            <!-- [`• 브랜치로 바로가기 >>> step02_01`](https://github.com/portfolio-y0711/2021_modularJs/tree/step02_01) -->
-
-            <!-- [`• 브랜치로 바로가기 >>> step02_02`](https://github.com/portfolio-y0711/2021_modularJs/tree/step02_02) -->
 
 * 회고 (Retrospective)
 
